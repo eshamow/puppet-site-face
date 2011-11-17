@@ -1,5 +1,7 @@
-Puppet::Face.define(:dashboard, '0.0.1') do
-  action :init do
+require 'puppet/face'
+
+Puppet::Face.define(:site, '0.0.1') do
+  action :create do
     summary "Initialize Puppet site"
     description <<-'EOT'
       Initialize a new Puppet site
@@ -10,8 +12,7 @@ Puppet::Face.define(:dashboard, '0.0.1') do
 
     when_invoked do
       File.open('/tmp/newsite', 'w') do |f|
-        f.puts "This will be added as a line with a trailing newline"
-        f.write "This won't have a trailing newline"
+        f.puts "Testing new puppet face"
       end
     end
   end
