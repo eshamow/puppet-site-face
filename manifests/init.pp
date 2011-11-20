@@ -30,4 +30,12 @@ class puppet-site-face {
     group  => 'pe-puppet',
     mode   => '0644',
   }
+
+  file { 'face_site_datastore':
+    path   => '/opt/puppet/lib/ruby/site_ruby/1.8/puppet/face/site/site_datastore.rb',
+    source => 'puppet:///puppet-site-face/site_datastore.rb',
+    owner  => 'pe-puppet',
+    group  => 'pe-puppet',
+    mode   => '0644',
+  }
 }
